@@ -9,7 +9,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.sangitplayer.navigation.Navigation
 import com.example.sangitplayer.ui.theme.SangitPlayerTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +21,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             SangitPlayerTheme {
                 MyApp{
-                    
+                    val navController = rememberNavController()
+                    Navigation(navController = navController)
                 }
             }
         }

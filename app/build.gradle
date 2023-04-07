@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -65,4 +67,19 @@ dependencies {
     def nav_version = "2.5.3"
 
     implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    //dagger-hilt
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
+
+    //exoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.5'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.5'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.18.5'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.5'
+
+}
+
+kapt {
+    correctErrorTypes true
 }
